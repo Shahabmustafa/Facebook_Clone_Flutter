@@ -1,3 +1,4 @@
+import 'package:facebook_clone/Screen/Create%20Account/create_account_name.dart';
 import 'package:facebook_clone/Utls/colors.dart';
 import 'package:flutter/material.dart';
 
@@ -13,6 +14,7 @@ class _CreateAccountPageState extends State<CreateAccountPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        backgroundColor: appColors.TextButtonColor,
         title: Text('Create account'),
       ),
       body: Padding(
@@ -34,7 +36,12 @@ class _CreateAccountPageState extends State<CreateAccountPage> {
                   height: 40.0,
                 ),
                 ElevatedButton(
-                    onPressed: (){}, 
+                  style: ElevatedButton.styleFrom(
+                    backgroundColor: appColors.TextButtonColor,
+                  ),
+                    onPressed: (){
+                      Navigator.push(context, MaterialPageRoute(builder: (context) => createAccountName()));
+                    },
                     child: const Text('Next')
                 ),
               ],

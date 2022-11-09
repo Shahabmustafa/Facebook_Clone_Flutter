@@ -1,3 +1,4 @@
+import 'package:facebook_clone/Screen/login_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:facebook_clone/Utls/colors.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
@@ -12,6 +13,15 @@ class SplashPage extends StatefulWidget {
 
 class _SplashPageState extends State<SplashPage> {
   @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    _navigatorHome();
+  }
+  _navigatorHome()async{
+    await Future.delayed(const Duration(seconds: 3),(){});
+    Navigator.push(context, MaterialPageRoute(builder: (context) => const LoginPage()));
+  }
   Widget build(BuildContext context) {
     return Scaffold(
       body: Column(
@@ -19,10 +29,13 @@ class _SplashPageState extends State<SplashPage> {
         children: [
         Column(
           children: [
-            Center(child: Image.asset('images/download.png',width: 150,height: 150,)),
-            // SpinKitThreeInOut(
-            //
-            //   color: Colors.black,
+            Center(child: Image.asset('images/Facebook-logo.png',width: 150,height: 150,)),
+            const SizedBox(
+              height: 30.0,
+            ),
+            // const SpinKitThreeInOut(
+            //   // delay: ,
+            //   color: appColors.AppbarColor,
             //   size: 20.0,
             // ),
           ],
